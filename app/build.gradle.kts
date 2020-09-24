@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
     id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -45,6 +47,11 @@ dependencies {
     implementation(SupportLibs.ANDROIDX_APPCOMPAT)
     implementation(SupportLibs.ANDROIDX_CONSTRAINT_LAYOUT)
     implementation(SupportLibs.ANDROIDX_CORE_KTX)
+    implementation(SupportLibs.HILT)
+    kapt(SupportLibs.HILT_COMPILER)
+    // Room
+    implementation(SupportLibs.ROOM)
+    implementation(SupportLibs.ROOM_COMPILER)
 
     testImplementation(TestingLib.JUNIT)
 
